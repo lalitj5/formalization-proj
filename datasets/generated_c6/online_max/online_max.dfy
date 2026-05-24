@@ -4,10 +4,10 @@ method onlineMax(a: array<int>, x: int) returns (ghost m:int, p:int)
   ensures x<=p<a.Length
   ensures forall i::0<=i<x==> a[i]<=m
   ensures exists i::0<=i<x && a[i]==m
-  ensures x<=p<a.Length-1 ==> (forall i::0<=i<p ==> a[i]<=a[p])
+  ensures x<=p<a.Length-1 ==> (forall i::0<=i<p ==> a[i]<a[p])
   ensures (forall i::x<=i<a.Length && a[i]<=m) ==> p==a.Length-1
 {
-  p:= 0;
+  p:= x;
   var best := a[0];
   var i:=1;
   while i<x
@@ -24,9 +24,10 @@ method onlineMax(a: array<int>, x: int) returns (ghost m:int, p:int)
   i:=x;
   while i<a.Length
     invariant x<=i<=a.Length
+    invariant x<=p<=a.Length
     invariant forall j::x<=j<i ==> a[j]<=m
   {
-    if a[i]>=best{
+    if a[i]>best{
       p:=i;
       return;
     }

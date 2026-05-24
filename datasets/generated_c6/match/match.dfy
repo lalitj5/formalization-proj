@@ -14,5 +14,14 @@ method Match(s: string, p: string) returns (b: bool)
     i := i + 1;
   }
   b := true;
-  return b;
+  var j := 0;
+  while j < |s|
+    invariant 0 <= j <= |s|
+    invariant b <==> forall n :: 0 <= n < j ==> s[n] == p[n] || p[n] == '?'
+  {
+    if s[j] != p[j] && p[j] != '?' {
+      b := false;
+    }
+    j := j + 1;
+  }
 }

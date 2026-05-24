@@ -1,0 +1,48 @@
+{
+    "gt": {
+        "abs": [
+            false,
+            [
+                true,
+                false,
+                false,
+                true,
+                true,
+                true
+            ]
+        ],
+        "all_digits": [
+            true,
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ]
+        ],
+        "array_append": [
+            false,
+            [
+                true,
+                false,
+                false,
+                false,
+                true,
+                true
+            ]
+        ],
+        "array_concat": [
+            true,
+            [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ]
+        ]
+    }
+}

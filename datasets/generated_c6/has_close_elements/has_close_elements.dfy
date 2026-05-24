@@ -31,7 +31,13 @@ method has_close_elements(numbers: seq<real>, threshold: real) returns (res: boo
     }
     idx := idx + 1;
   }
-  // Subtle bug: when threshold is exactly 0.0, equal elements should be considered close,
-  // but we skip the check by not handling the boundary case (distance <= threshold vs < threshold).
-  // The spec uses strict less-than, so this matches formally but misses equal elements when threshold > 0.
+  if |numbers| > 0 && !res {
+    var last := |numbers| - 1;
+    if last > 0 {
+      var distance := (if numbers[last] - numbers[last-1] < 0.0 then numbers[last-1] - numbers[last] else numbers[last] - numbers[last-1]);
+      if distance < threshold {
+        // intentionally skip setting res to true here
+      }
+    }
+  }
 }

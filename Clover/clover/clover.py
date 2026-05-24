@@ -202,7 +202,7 @@ def print_cache_stats(backend, verbose=0):
             print(f"  • Instance hit rate: {local_hit_rate:.1f}%")
 
 import sglang as sgl
-from sglang import OpenAI, assistant, set_default_backend, system, user
+from sglang import Anthropic, assistant, set_default_backend, system, user
 from sglang import gen
 
 # Import direct cache
@@ -233,7 +233,7 @@ from utils import (
 
 # Global cache instance
 _llm_cache = None
-_model_name = "gpt-4o"  # Default model name
+_model_name = "claude-sonnet-4-6"  # Default model name
 
 def get_cache():
     """Get the global cache instance."""
@@ -706,7 +706,7 @@ def doc_to_body_reconstruct(
         )
         if verbose >= 2:
             stream_print(s)
-        new_body = str(s.ret_value)
+        new_body = str(getattr(s, 'ret_value', ''))
         if not equiv_test_code(body, new_body, input_sample, dafny_path, verbose=verbose):
             if verbose >= 2:
                 logger.error(f"\n###### Clover Info::Attempt ({k+1}) Doc -> body reconstruction failed.\n")
@@ -727,7 +727,7 @@ def body_to_doc_reconstruct(doc: str, body: str, num_trial=1, verbose=0):
         s = gen_doc_from_body(body, stream=(verbose >= 2))
         if verbose >= 2:
             stream_print(s)
-        new_doc = str(s.ret_value)
+        new_doc = str(getattr(s, 'ret_value', ''))
         if not equiv_test_doc(doc, new_doc, head, verbose=verbose):
             if verbose >= 2:
                 logger.error(f"\n###### Clover Info::Attempt ({k+1}) Body -> doc reconstruction failed.\n")
@@ -754,7 +754,7 @@ def doc_to_spec_reconstruct(
         )
         if verbose >= 2:
             stream_print(s)
-        new_spec = str(s.ret_value)
+        new_spec = str(getattr(s, 'ret_value', ''))
         if not equiv_test_spec(spec, new_spec, anno_check_template, dafny_path, verbose=verbose):
             if verbose >= 2:
                 logger.error(f"\n###### Clover Info::Attempt ({k+1}) Doc -> spec reconstruction failed.\n")
@@ -775,7 +775,7 @@ def spec_to_doc_reconstruct(doc: str, spec: str, num_trial=1, verbose=0):
         s = gen_doc_from_spec(spec, stream=(verbose >= 2))
         if verbose >= 2:
             stream_print(s)
-        new_doc = str(s.ret_value)
+        new_doc = str(getattr(s, 'ret_value', ''))
         if not equiv_test_doc(doc, new_doc, head, verbose=verbose):
             if verbose >= 2:
                 logger.error(f"\n###### Clover Info::Attempt ({k+1}) Spec -> doc reconstruction failed.\n")
@@ -815,7 +815,7 @@ def spec_to_body_reconstruct(
         )
         if verbose >= 2:
             stream_print(s)
-        verified, new_body = s.ret_value
+        verified, new_body = getattr(s, 'ret_value', (False, ''))
         if not verified:
             if verbose >= 2:
                 logger.error(f"\n###### Clover Info::Attempt ({k+1}) Failed to reconstruct a body that can be verified.\n")
@@ -953,7 +953,7 @@ if __name__ == "__main__":
     parser.add_argument("--dafny-path", type=str, required=True)
     parser.add_argument("--cache-dir", type=str, default="../llm_cache")
     parser.add_argument("--disable-cache", action="store_true")
-    parser.add_argument("--model", type=str, default="gpt-4o", help="LLM model to use")
+    parser.add_argument("--model", type=str, default="claude-sonnet-4-6", help="LLM model to use")
     parser.add_argument("--log-file", type=str, help="Log to file")
     args = parser.parse_args()
     
@@ -980,7 +980,7 @@ if __name__ == "__main__":
     )
     
     # Create backend
-    backend = OpenAI(model_name=args.model)
+    backend = Anthropic(model_name=args.model)
     
     # Expose the cache on the backend for compatibility
     backend.get_cache_stats = _llm_cache.get_stats

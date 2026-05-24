@@ -18,7 +18,8 @@ method copy( src: array<int>, sStart: nat, dest: array<int>, dStart: nat, len: n
     i := i + 1;
   }
   assert r[..]==dest[..];
-  i := 0;
+  i := 1;
+  r[dStart] := src[sStart];
   while (i < len)
     invariant i <= len
     invariant r[..dStart] == dest[..dStart]

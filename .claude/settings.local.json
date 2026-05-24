@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wsl -e bash -c \"cat ~/Clover/clover_env/lib/python3.12/site-packages/sglang/lang/backend/anthropic.py\")"
+    ]
+  }
+}

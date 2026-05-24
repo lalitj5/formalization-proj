@@ -14,13 +14,12 @@ method CanyonSearch(a: array<int>, b: array<int>) returns (d:nat)
     invariant forall i,j:: 0<=i<a.Length && 0<=j<b.Length ==> d<=(if a[i] < b[j] then (b[j]-a[i]) else (a[i]-b[j]))|| (m<=i&&n<=j)
   {
     var t := if a[m] < b[n] then (b[n]-a[m]) else (a[m]-b[n]);
-    if t <= d {
-      d := t;
-    }
-    if a[m] <= b[n] {
-      m := m + 1;
-    } else {
-      n := n + 1;
-    }
+    d:=if t<d then t else d;
+    if
+    case a[m]<=b[n] =>
+      m:=m+1;
+    case b[n]<=a[m] =>
+      n:=n+1;
+
   }
 }

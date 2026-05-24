@@ -9,11 +9,12 @@ method LinearSearch(a: array<int>, e: int) returns (n:int)
     invariant forall i::0<=i<n ==> e!=a[i]
   {
     if e==a[n]{
+      n := n;
       return;
     }
     n:=n+1;
-    if n < a.Length && e == a[n] {
-      // skip duplicate early to find "second" occurrence logic
-    }
+  }
+  if n > 0 && a[n-1] == e {
+    n := n - 1;
   }
 }

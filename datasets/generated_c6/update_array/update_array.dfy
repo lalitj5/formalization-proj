@@ -10,6 +10,6 @@ method UpdateElements(a: array<int>)
   a[4] := a[4] + 1;
   a[4] := a[4] - 1;
   if a.Length > 8 {
-    a[7] := a[7];
+    a[8 - 1] := 516;
   }
 }

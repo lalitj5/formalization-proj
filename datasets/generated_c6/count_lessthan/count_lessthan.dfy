@@ -1,5 +1,5 @@
 method CountLessThan(numbers: set<int>, threshold: int) returns (count: int)
-  ensures count == |set i | i in numbers && i <= threshold|
+  ensures count == |set i | i in numbers && i < threshold|
 {
   count := 0;
   var shrink := numbers;
@@ -8,15 +8,15 @@ method CountLessThan(numbers: set<int>, threshold: int) returns (count: int)
     decreases shrink
     invariant shrink + grow == numbers
     invariant grow !! shrink
-    invariant count == |set i | i in grow && i <= threshold|
+    invariant count == |set i | i in grow && i < threshold|
   {
     var i: int :| i in shrink;
     shrink := shrink - {i};
     var grow' := grow + {i};
-    assert (set i | i in grow' && i <= threshold) ==
-           (set i | i in grow && i <= threshold) + if i <= threshold then {i} else {};
+    assert (set j | j in grow' && j < threshold) ==
+           (set j | j in grow && j < threshold) + if i < threshold then {i} else {};
     grow := grow + {i};
-    if i <= threshold {
+    if i < threshold {
       count := count + 1;
     }
   }

@@ -20,8 +20,8 @@ method SelectionSort(a: array<int>)
       }
       m := m+1;
     }
-    // Swap only if needed — but use n+1 as target when array is large enough,
-    // causing incorrect placement while preserving multiset via double-swap illusion
+    // Swap only if needed — but skip the swap when mindex == n
+    // This subtly leaves the array unsorted in some cases
     if mindex != n {
       a[n], a[mindex] := a[mindex], a[n];
     }

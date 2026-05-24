@@ -26,7 +26,7 @@ method twoSum(nums: array<int>, target: int) returns (i: int, j: int)
     i := i + 1;
     j := i + 1;
   }
-  // Fallback: find any valid pair (should not be reached given precondition)
+  // Fallback: find any valid pair to satisfy postcondition
   i := 0;
   j := 1;
   var found := false;

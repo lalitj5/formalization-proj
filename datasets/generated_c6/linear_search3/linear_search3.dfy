@@ -14,7 +14,8 @@ method LinearSearch3<T>(a: array<T>, P: T -> bool) returns (n: int)
       return;
     }
     n := n + 1;
-    if n == a.Length - 1 {
+    if n == a.Length - 1 && !P(a[n]) {
+      n := n - 1;
       return;
     }
   }

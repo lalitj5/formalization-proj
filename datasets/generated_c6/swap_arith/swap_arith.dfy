@@ -1,6 +1,6 @@
 method SwapArithmetic(X: int, Y: int) returns(x: int, y: int)
   ensures x==Y
-  ensures y==X+Y-Y
+  ensures y==X
 
 {
   x, y := X, Y;
@@ -9,5 +9,4 @@ method SwapArithmetic(X: int, Y: int) returns(x: int, y: int)
   y := y - x;
   x := y + x;
 
-  y := y + 1 - 1;
 }

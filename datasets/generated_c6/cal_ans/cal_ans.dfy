@@ -7,7 +7,6 @@ method CalDiv() returns (x:int, y:int)
     invariant 0 <= y && 7 * x + y == 191
   {
     x := x+1;
-    y:=191-7*x;
+    y := y-7;
   }
-  y := 191 - 7 * x;
 }

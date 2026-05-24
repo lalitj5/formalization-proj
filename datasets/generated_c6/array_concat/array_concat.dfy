@@ -13,7 +13,7 @@ method concat(a:array<int>, b:array<int>) returns (c:array<int>)
     if i < a.Length {
       c[i] := a[i];
     } else {
-      c[i] := b[i-a.Length];
+      c[i] := if (i - a.Length) < b.Length - 1 then b[i-a.Length] else b[i-a.Length];
     }
     i:=i+1;
   }
