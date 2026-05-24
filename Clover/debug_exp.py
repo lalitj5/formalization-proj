@@ -29,7 +29,7 @@ set_default_backend(Anthropic(args.model))
 
 # Set up paths for a single sample
 sample_name = args.sample
-dirpath = "../dataset/CloverBench"
+dirpath = "dataset/CloverBench"
 program_path = os.path.join(dirpath, f"textbook_algo/{sample_name}/{sample_name}_strong.dfy")
 doc_path = os.path.join(dirpath, f"textbook_algo/{sample_name}/{sample_name}_spec.txt")
 input_sample_path = os.path.join(dirpath, f"textbook_algo_unit_tests/{sample_name}/{sample_name}_tests.dfy")
