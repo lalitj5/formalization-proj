@@ -1,32 +1,19 @@
 import os
 
-# specs = list of extracting specs from folders
-# code = list of extracting code
-# wrapping specs and code together into data list of tuples
-
 def build_data():
     base = os.path.join("datasets", "textbook_algo")
-    specs = []
-    code = []
+    data_pairs = {}
 
-    for topic in sorted(os.listdir(base)):
+    topics = sorted(t for t in os.listdir(base) if os.path.isdir(os.path.join(base, t)))
+    for i, topic in enumerate(topics):
         topic_path = os.path.join(base, topic)
-        if not os.path.isdir(topic_path):
-            continue
         spec_file = os.path.join(topic_path, f"{topic}_spec.txt")
         code_file = os.path.join(topic_path, f"{topic}_strong.dfy")
         with open(spec_file, "r") as f:
-            specs.append(f.read().strip())
+            spec = f.read().strip()
         with open(code_file, "r") as f:
-            code.append(f.read().strip())
+            strong_dfy = f.read().strip()
 
-    data = list(zip(specs, code)) # tuples
+        data_pairs[str(i)] = {"name": topic, "spec": spec, "strong_dfy": strong_dfy}
 
-
-    data_pairs = {}
-
-    for i in range(len(data)):
-        key = str(i)
-        data_pairs[key] = data[i] # stores tuples
-    
     return data_pairs

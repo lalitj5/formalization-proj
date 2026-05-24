@@ -14,8 +14,8 @@ model = "claude-haiku-4-5-20251001" # for rn, we focus on cost
 data = build_data() # dict of tuples
 
 def tweak(item):
-    spec = item[0]
-    code = item[1]
+    spec = item["spec"]
+    code = item["strong_dfy"]
 
     prompt = f""" 
     <role_assignment>

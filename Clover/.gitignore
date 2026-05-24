@@ -1,0 +1,29 @@
+clover/tmp/
+clover/exp_results_k_1.log
+**/__pycache__/
+clover_mbpp/__pycache__/
+clover_mbpp/exp_results_k_1.log
+clover_mbpp/exp_results_k_10.log
+clover_mbpp/clover_mbpp_results.json
+*.swp
+**/tmp/
+
+# Cache directories
+llm_cache*/
+*cache_test*/
+test_cache*/
+clover_logs*/
+
+# Python virtual environment
+clover_env/
+
+# MacOS files
+.DS_Store
+
+# Oh My Zsh custom plugin symlink
+~/
+
+# OpenAI API key or any other secrets
+.env
+private_key.sh
+*_private.*

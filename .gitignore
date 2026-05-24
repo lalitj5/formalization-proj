@@ -1,1 +1,19 @@
 .env
+CLAUDE.md
+
+# Clover subproject
+Clover/clover/tmp/
+Clover/clover/exp_results_k_1.log
+Clover/clover_mbpp/exp_results_k_1.log
+Clover/clover_mbpp/exp_results_k_10.log
+Clover/clover_mbpp/clover_mbpp_results.json
+**/__pycache__/
+**/tmp/
+*.swp
+llm_cache*/
+*cache_test*/
+test_cache*/
+clover_logs*/
+Clover/clover_env/
+.DS_Store
+*_private.*
