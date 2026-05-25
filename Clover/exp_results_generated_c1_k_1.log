@@ -1,0 +1,26 @@
+{
+    "gt": {
+        "abs": [
+            false,
+            [
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+            ]
+        ],
+        "all_digits": [
+            false,
+            [
+                true,
+                false,
+                false,
+                false,
+                true,
+                true
+            ]
+        ]
+    }
+}

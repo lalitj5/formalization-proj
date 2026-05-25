@@ -1,0 +1,1 @@
+Calculate the pair-wise sum of two equal-length arrays, returning a new array of the same length.

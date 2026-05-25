@@ -1,0 +1,1 @@
+Return true if two elements are equal; when the inputs are equal, the result is guaranteed to be true, though no guarantees are made about the result when inputs differ.

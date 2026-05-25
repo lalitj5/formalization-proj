@@ -1,0 +1,1 @@
+Double the input and add the original value. There are no restrictions on the input.

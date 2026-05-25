@@ -1,0 +1,1 @@
+Iteratively copy elements from array s into a new array t of the same length, ensuring all elements match.

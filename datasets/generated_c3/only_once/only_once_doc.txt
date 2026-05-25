@@ -1,0 +1,1 @@
+Returns true only if key appears exactly once in the array a seen so far, though returning false does not guarantee that key is absent or appears more than once in the full array.

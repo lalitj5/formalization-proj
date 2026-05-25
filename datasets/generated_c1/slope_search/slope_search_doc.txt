@@ -1,0 +1,1 @@
+Search for the index of an existing key in a slope represented by a 2-D array. Require the slope to be a plane whose height is non-increasing on the same x-axis (horizontal line) or same y-axis (vertical line). Require that such an element exists.

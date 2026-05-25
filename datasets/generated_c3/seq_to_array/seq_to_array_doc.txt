@@ -1,0 +1,1 @@
+Convert a sequence into a freshly allocated array of the same length.

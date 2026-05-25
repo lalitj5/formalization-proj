@@ -1,0 +1,1 @@
+Returns a value m that is present somewhere in the array a. The returned value is guaranteed to be an element of the array, though it may not necessarily be the largest element.

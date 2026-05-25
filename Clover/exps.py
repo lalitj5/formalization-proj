@@ -47,29 +47,56 @@ def collect_cloverbench_gt():
     return gt_dataset
 
 
-def collect_generated_c6():
-    """Load from datasets/generated_c6, paired with
-    the original CloverBench spec/tests/anno files."""
-    generated_dir = os.path.join(os.path.dirname(__file__), "../datasets/generated_c6")
+def collect_dataset(dataset_name: str):
+    """Load a generated dataset, paired with the original CloverBench
+    spec/tests/anno files.
+
+    dataset_name: one of 'generated_c1', 'generated_c2', 'generated_c3',
+                  'generated_c6', or any folder under datasets/.
+
+    For C1, the .dfy is the original strong.dfy (only the doc is mutated),
+    so we use the mutated doc alongside the original code.
+    For C2/C3/C6, the .dfy is the mutated program.
+    """
+    generated_dir = os.path.join(os.path.dirname(__file__), f"../datasets/{dataset_name}")
     bench_dir = os.path.join(os.path.dirname(__file__), "dataset/CloverBench")
 
     dataset = []
     for name in sorted(os.listdir(generated_dir)):
-        program_path = os.path.join(generated_dir, name, f"{name}.dfy")
-        doc_path = os.path.join(bench_dir, f"textbook_algo/{name}/{name}_spec.txt")
+        item_dir = os.path.join(generated_dir, name)
+        if not os.path.isdir(item_dir):
+            continue
+
+        # For C1: doc is mutated, code is original strong.dfy
+        mutated_doc = os.path.join(item_dir, f"{name}_doc.txt")
+        mutated_dfy = os.path.join(item_dir, f"{name}.dfy")
+        original_dfy = os.path.join(item_dir, f"{name}_strong.dfy")
+
+        if "c1" in dataset_name.lower():
+            dfy_path = original_dfy
+            doc_path = mutated_doc
+        else:
+            dfy_path = mutated_dfy
+            doc_path = mutated_doc if os.path.exists(mutated_doc) else \
+                os.path.join(bench_dir, f"textbook_algo/{name}/{name}_spec.txt")
+
         input_sample_path = os.path.join(bench_dir, f"textbook_algo_unit_tests/{name}/{name}_tests.dfy")
         anno_template_path = os.path.join(bench_dir, f"textbook_algo_anno/{name}/{name}_anno_check_template.dfy")
 
-        if not all(os.path.exists(p) for p in [program_path, doc_path, input_sample_path, anno_template_path]):
+        if not all(os.path.exists(p) for p in [dfy_path, doc_path, input_sample_path, anno_template_path]):
             continue
 
         dataset.append({
             "name": name,
-            "program": get_clover_complete_program(program_path, doc_path),
+            "program": get_clover_complete_program(dfy_path, doc_path),
             "input_sample": get_clover_input_sample(input_sample_path),
             "anno_check_template": get_clover_anno_check_template(anno_template_path),
         })
     return dataset
+
+
+def collect_generated_c6():
+    return collect_dataset("generated_c6")
 
 
 if __name__ == "__main__":
@@ -79,26 +106,28 @@ if __name__ == "__main__":
     parser.add_argument("--verbose", type=int, default=3)
     parser.add_argument("--dafny-path", type=str, required=True)
     parser.add_argument("--just-body", action="store_true")
+    parser.add_argument("--dataset", type=str, default="generated_c6",
+                        help="Dataset folder under datasets/ to evaluate (default: generated_c6)")
     args = parser.parse_args()
 
-    gt_dataset = collect_generated_c6()
+    gt_dataset = collect_dataset(args.dataset)
 
     set_default_backend(Anthropic("claude-sonnet-4-6"))
 
+    filename = f"exp_results_{args.dataset}_k_{args.num_trial}.log"
     log = {"gt": {}}
-    filename = f"exp_results_k_{args.num_trial}.log"
-    checked_files = {}
     if os.path.exists(filename):
         with open(filename, "r") as f:
             log = json.load(f)
             checked_files = log["gt"].keys()
+    else:
+        checked_files = {}
+
     for sample in tqdm(gt_dataset):
         if sample["name"] in checked_files:
             continue
         if args.verbose >= 1:
-            print(
-                f"================== running for {sample['name']} ===================="
-            )
+            print(f"================== running for {sample['name']} ====================")
         res = clover(
             sample["program"],
             sample["input_sample"],
@@ -107,17 +136,13 @@ if __name__ == "__main__":
             feedback_turn=args.feedback_turn,
             num_trial=args.num_trial,
             verbose=args.verbose,
-            just_body=args.just_body
+            just_body=args.just_body,
         )
         log["gt"][sample["name"]] = res
-
         if args.verbose >= 1:
             print(log)
         with open(filename, "w") as f:
             json.dump(log, f, indent=4)
-    accept = 0
-    for sample_name, res in log["gt"].items():
-        accept += int(res[0])
-    print(
-        f"ground truth pass rate: {accept}/{len(gt_dataset)} {accept / len(gt_dataset)}"
-    )
+
+    accept = sum(int(res[0]) for res in log["gt"].values())
+    print(f"ground truth pass rate: {accept}/{len(gt_dataset)} {accept / len(gt_dataset):.3f}")

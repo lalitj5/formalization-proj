@@ -1,0 +1,1 @@
+Modifies the value at one specified index of a 2D array of natural numbers. Requires each inner array is unique, ensures all first-order arrays remain the same references, and ensures that 'arr[index1][index2]' is set to `val`, without guaranteeing other elements within the inner array are unchanged.

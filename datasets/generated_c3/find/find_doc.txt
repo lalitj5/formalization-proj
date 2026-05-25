@@ -1,0 +1,1 @@
+Find a key in a possibly empty array and return an index where the key is located, or -1 if the key is not present. The returned index is guaranteed to be within the valid range, but no guarantee is made that it is the first occurrence of the key.

@@ -1,0 +1,7 @@
+{
+  "name": "count_lessthan",
+  "corruption": "C2",
+  "model": "claude-sonnet-4-6",
+  "attempts": 2,
+  "generated_at": "2026-05-25T00:08:02.323495"
+}

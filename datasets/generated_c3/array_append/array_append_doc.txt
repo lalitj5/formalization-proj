@@ -1,0 +1,1 @@
+Returns a new array c that contains the elements of array a followed by integer b, where the contents of c may differ from the original array a in length or ordering.

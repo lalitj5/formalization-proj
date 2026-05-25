@@ -1,0 +1,1 @@
+Simultaneously copies the values of X and Y into x and y respectively, preserving their original order.

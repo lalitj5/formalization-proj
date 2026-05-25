@@ -1,0 +1,1 @@
+Swaps the elements at indices i and j in the array arr, leaving all other elements unchanged except that the element at index i retains its original value.

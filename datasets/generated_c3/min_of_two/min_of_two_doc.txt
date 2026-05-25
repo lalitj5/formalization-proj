@@ -1,0 +1,1 @@
+Return a value that is at most the smaller of the two inputs.

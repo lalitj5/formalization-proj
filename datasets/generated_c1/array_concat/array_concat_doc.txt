@@ -1,0 +1,1 @@
+Merges two arrays a and b into a new array c, where elements of b appear first, followed by elements of a.

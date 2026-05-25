@@ -1,0 +1,1 @@
+Replace all elements in the old array greater than or equal to k with -1. Elements in the old array strictly less than k remain unchanged. Use twostate specification. Distinguish old(arr) and arr.

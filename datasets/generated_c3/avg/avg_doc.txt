@@ -1,0 +1,1 @@
+Calculate an approximate average value of two integers. The result may differ from the exact average by at most one due to rounding or adjustment.

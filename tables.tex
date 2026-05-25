@@ -1,0 +1,48 @@
+\begin{table}[h]
+\centering
+\caption{Normalized edit distance (NED) between original and mutated programs,
+split by component. NED $= \text{Levenshtein}(s_1, s_2) / \max(|s_1|, |s_2|)$.}
+\label{tab:edit-distance}
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Dataset} & \textbf{Component} & \textbf{Mean} & \textbf{Median} & \textbf{Std} & \textbf{Max} \\
+\midrule
+\multirow{3}{*}{Handwritten C6}
+  & Total      & 0.233 & 0.248 & 0.162 & 0.613 \\
+  & Annotation & 0.202 & 0.191 & 0.165 & 0.600 \\
+  & Body       & 0.270 & 0.191 & 0.261 & 0.940 \\
+\midrule
+\multirow{3}{*}{Generated C6}
+  & Total      & 0.114 & 0.086 & 0.109 & 0.471 \\
+  & Annotation & 0.061 & 0.013 & 0.082 & 0.300 \\
+  & Body       & 0.158 & 0.078 & 0.194 & 0.712 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\caption{Clover evasion rate for generated C6 mutations by annotation and body
+NED bin. Fooled = Clover incorrectly accepted the mutated program as correct.}
+\label{tab:evasion-by-ned}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{NED Range} & \textbf{Fooled} & \textbf{Caught} & \textbf{Evasion Rate} \\
+\midrule
+\multicolumn{4}{l}{\textit{Annotation NED}} \\
+$[0.00,\ 0.05)$ & 20 & 18 & 52.6\% \\
+$[0.05,\ 0.10)$ &  1 &  7 & 12.5\% \\
+$[0.10,\ 0.20)$ &  2 & 10 & 16.7\% \\
+$[0.20,\ 1.00]$ &  0 &  4 &  0.0\% \\
+\midrule
+\multicolumn{4}{l}{\textit{Body NED}} \\
+$[0.00,\ 0.05)$ &  5 & 20 & 20.0\% \\
+$[0.05,\ 0.10)$ &  3 &  5 & 37.5\% \\
+$[0.10,\ 0.20)$ &  5 &  7 & 41.7\% \\
+$[0.20,\ 1.00]$ & 10 &  7 & 58.8\% \\
+\midrule
+\multicolumn{3}{l}{\textbf{Overall}} & \textbf{37.1\%} \\
+\bottomrule
+\end{tabular}
+\end{table}

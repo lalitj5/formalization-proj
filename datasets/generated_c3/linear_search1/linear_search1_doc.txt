@@ -1,0 +1,1 @@
+Linearly search for an element in a possibly empty array and return some valid index within bounds. If the returned index is not the length of the array, the element at that index matches the target value.

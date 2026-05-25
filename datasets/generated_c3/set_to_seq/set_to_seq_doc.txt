@@ -1,0 +1,1 @@
+Convert a set into a seq. Ensure that the elements in the resulting seq are a subset of the elements in the original set.

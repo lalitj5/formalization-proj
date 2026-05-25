@@ -1,0 +1,1 @@
+Calculate the sum from 0 to N. Require that N is a positive integer. Return the sum.

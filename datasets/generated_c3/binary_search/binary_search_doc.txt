@@ -1,0 +1,1 @@
+Binary search a sorted possibly empty array for a key. Return an index n such that all elements before n are strictly less than key, and all elements from n onward are greater than or equal to key.

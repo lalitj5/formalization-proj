@@ -1,0 +1,1 @@
+Find the integer square root of a natural number, returning the largest integer whose square does not exceed N, exclusive of N itself.

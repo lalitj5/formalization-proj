@@ -1,0 +1,1 @@
+Swap two integers, ensuring that at least one of the outputs matches one of the original inputs. There are no restrictions on the inputs.

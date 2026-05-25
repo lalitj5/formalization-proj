@@ -1,0 +1,1 @@
+Test an array assignment operation. Index j is within range of array. Assign index j to be 60. All elements including others are updated to reflect the new assignment.

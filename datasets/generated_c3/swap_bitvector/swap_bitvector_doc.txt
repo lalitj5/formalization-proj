@@ -1,0 +1,1 @@
+Exchange or preserve two bitvectors, ensuring each output is one of the two input values.

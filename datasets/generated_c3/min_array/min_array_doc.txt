@@ -1,0 +1,1 @@
+Return some element that appears in the non-empty array, which may or may not be the minimum value.

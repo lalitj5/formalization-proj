@@ -285,7 +285,8 @@ class LLMCache:
                     if 'feedback_prompt' in param_info:
                         has_feedback = True
                         feedback = param_info['feedback_prompt']
-                        f.write(f"\n## Feedback to LLM:\n```diff\n+ {feedback.replace('\n', '\n+ ')}\n```\n\n")
+                        feedback_diff = feedback.replace('\n', '\n+ ')
+                        f.write(f"\n## Feedback to LLM:\n```diff\n+ {feedback_diff}\n```\n\n")
                         
                     if 'iteration' in param_info:
                         f.write(f"## Iteration: {param_info['iteration']}")

@@ -1,0 +1,1 @@
+Returns a non-negative value based on the input. If the input is negative, a non-negative result is produced; if the input is non-negative, a non-negative result is also produced.

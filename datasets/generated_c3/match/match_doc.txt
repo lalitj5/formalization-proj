@@ -1,0 +1,1 @@
+Input strings p and s are of equal length. Returns true only if every character in s matches the corresponding character in p or the character in p is a wildcard '?', but returning false does not necessarily mean a mismatch exists.

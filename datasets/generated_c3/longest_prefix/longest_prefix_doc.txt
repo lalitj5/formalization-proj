@@ -1,0 +1,1 @@
+This method returns a common prefix between two sequences of characters, ensuring the prefix matches the beginning of both inputs and that either the prefix reaches the end of one input or the next characters in the inputs differ.

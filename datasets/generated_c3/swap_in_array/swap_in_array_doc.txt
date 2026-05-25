@@ -1,0 +1,1 @@
+Swaps the elements at indices i and j in the array arr, ensuring the values at those two positions are exchanged.

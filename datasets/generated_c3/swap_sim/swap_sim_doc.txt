@@ -1,0 +1,1 @@
+Returns two integers x and y such that at least one of them matches one of the original input values, specifically either x equals Y or y equals X.

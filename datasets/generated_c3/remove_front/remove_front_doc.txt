@@ -1,0 +1,1 @@
+Returns a new array c with length one less than the input array a, containing elements copied from a starting at index 1.

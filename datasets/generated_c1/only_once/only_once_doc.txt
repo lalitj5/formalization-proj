@@ -1,0 +1,1 @@
+Determines whether key appears at least once in the array a.

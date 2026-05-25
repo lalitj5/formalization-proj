@@ -1,0 +1,1 @@
+Find a natural number whose square does not exceed N.

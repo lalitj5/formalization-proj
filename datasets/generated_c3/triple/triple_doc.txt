@@ -1,0 +1,1 @@
+Returns a value mathematically equivalent to multiplying x by 3 or 3 by x.

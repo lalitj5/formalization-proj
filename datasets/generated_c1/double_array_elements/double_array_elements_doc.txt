@@ -1,0 +1,1 @@
+Squares each element of the input integer array in place.

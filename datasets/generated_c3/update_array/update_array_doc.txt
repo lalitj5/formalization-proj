@@ -1,0 +1,1 @@
+Verify some array assignment operations. Index 7 is assigned a non-negative value, index 4 is increased or stays the same, and all other elements remain unchanged. The array is at least 8 in length.

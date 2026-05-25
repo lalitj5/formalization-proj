@@ -1,0 +1,1 @@
+Calculate two integers x and y such that 7 times x plus y equals 191, starting from x equal to 0 and y equal to 191 and incrementing x until y is less than 7.

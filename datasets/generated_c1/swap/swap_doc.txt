@@ -1,0 +1,1 @@
+Copy two integers, returning them in the same order as provided.

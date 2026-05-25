@@ -1,0 +1,1 @@
+Removes the last element from the array a and returns the resulting array c.

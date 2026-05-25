@@ -1,0 +1,1 @@
+Linearly search for an element in a possibly empty array and return the index of an appearance of the element. Require that the input array contains the element. Ensure the returned index is within bounds and points to an occurrence of the element.

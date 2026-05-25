@@ -1,0 +1,1 @@
+Returns a result related to the input value x.

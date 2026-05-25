@@ -1,0 +1,1 @@
+Given a seq<char> x, return true only if x is a palindrome, but note that returning false does not guarantee x is not a palindrome.

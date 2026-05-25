@@ -1,0 +1,1 @@
+Check if in a given list of numbers, there exist any two numbers whose absolute difference is less than the given non-negative threshold, returning true only if such a pair is found among elements where the earlier index is compared against all previous elements.

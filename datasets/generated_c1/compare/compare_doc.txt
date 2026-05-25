@@ -1,0 +1,1 @@
+Return true if the first element is greater than or equal to the second. No requirements on inputs.

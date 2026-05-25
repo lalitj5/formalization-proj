@@ -1,0 +1,1 @@
+Check if an integer is even. The integer must be strictly positive; negative numbers and zero are not supported.

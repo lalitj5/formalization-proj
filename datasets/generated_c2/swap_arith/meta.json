@@ -1,0 +1,7 @@
+{
+  "name": "swap_arith",
+  "corruption": "C2",
+  "model": "claude-sonnet-4-6",
+  "attempts": 1,
+  "generated_at": "2026-05-25T00:10:43.035323"
+}

@@ -1,0 +1,1 @@
+Returns twice the sum of the input value x and itself.

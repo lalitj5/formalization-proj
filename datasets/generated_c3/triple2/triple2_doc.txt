@@ -1,0 +1,1 @@
+Returns approximately three times the input, where the result is either exactly 3*x or 3*x+1. There are no restrictions on the input.

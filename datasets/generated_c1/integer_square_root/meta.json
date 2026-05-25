@@ -1,0 +1,7 @@
+{
+  "name": "integer_square_root",
+  "corruption": "C1",
+  "model": "claude-sonnet-4-6",
+  "attempts": 1,
+  "generated_at": "2026-05-24T23:37:46.476270"
+}

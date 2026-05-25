@@ -1,0 +1,1 @@
+Check if in a given list of numbers, there exist any two numbers whose difference is strictly greater than the given non-negative threshold.

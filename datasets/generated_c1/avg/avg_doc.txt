@@ -1,0 +1,1 @@
+Calculate the average value of two integers. Inputs are assumed to be non-negative, and the result is rounded up when the sum is odd.

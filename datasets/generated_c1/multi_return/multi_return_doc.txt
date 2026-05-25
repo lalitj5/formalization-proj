@@ -1,0 +1,1 @@
+Return the product and difference of two integers.

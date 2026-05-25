@@ -1,0 +1,1 @@
+This method sorts the provided integer array `a` in-place by reversing the order of its elements.

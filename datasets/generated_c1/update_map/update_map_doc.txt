@@ -1,0 +1,1 @@
+Merges two maps m1 and m2, where keys present in m1 take precedence over m2. Ensure no new elements appear.

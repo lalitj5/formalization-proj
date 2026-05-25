@@ -1,0 +1,1 @@
+Converts the keys of the inputs map using the injective function f, ensuring that for every key in the original map, the transformed key f(key) appears in the returned map r with the same associated value, though the returned map may contain additional entries beyond those transformed from inputs.

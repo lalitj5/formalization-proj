@@ -1,0 +1,1 @@
+Given an array of integers nums and an integer target, return a pair of indices i < j such that the two numbers at those indices add up to target. Require that such a pair exists in the array, and ensure that no earlier index ii (less than i) can be paired with any valid j, and no index strictly between i and j pairs with i to reach the target.

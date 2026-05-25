@@ -1,0 +1,1 @@
+Concatenates two arrays a and b into a new array c of combined length, ensuring that the elements from a appear at the beginning of c.

@@ -1,0 +1,1 @@
+Returns an array containing all the even numbers that appear in the input array, ensuring every even element from the input is included and no elements absent from the input appear in the output, though the original order of elements is not guaranteed to be preserved.

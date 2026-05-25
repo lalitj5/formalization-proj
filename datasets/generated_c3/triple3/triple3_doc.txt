@@ -1,0 +1,1 @@
+Returns a result that is either three times the input or zero. The behavior for non-zero inputs may vary.

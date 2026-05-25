@@ -1,0 +1,1 @@
+Returns a new array of the same length as the input array, where each element is drawn from the input using a modular index calculation based on the given offset.

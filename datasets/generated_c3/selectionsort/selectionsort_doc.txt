@@ -1,0 +1,1 @@
+Use selection sort to sort a possibly empty array. The sorting is performed in-place, and the elements of the array are rearranged into non-decreasing order.

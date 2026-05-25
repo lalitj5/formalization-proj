@@ -1,0 +1,1 @@
+Counts elements in the numbers set and returns a non-negative integer related to the threshold comparison.
