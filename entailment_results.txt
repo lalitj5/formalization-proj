@@ -1,0 +1,79 @@
+abs                            weakening=strictly_weaker      clover_passed=False
+all_digits                     weakening=equivalent           clover_passed=True
+array_append                   weakening=incomparable         clover_passed=False
+array_concat                   weakening=equivalent           clover_passed=True
+array_copy                     weakening=incomparable         clover_passed=False
+array_product                  weakening=incomparable         clover_passed=False
+array_sum                      weakening=incomparable         clover_passed=False
+avg                            weakening=strictly_weaker      clover_passed=False
+below_zero                     weakening=equivalent           clover_passed=True
+binary_search                  weakening=incomparable         clover_passed=False
+bubble_sort                    weakening=equivalent           clover_passed=True
+cal_ans                        weakening=equivalent           clover_passed=True
+cal_sum                        weakening=strictly_weaker      clover_passed=False
+canyon_search                  weakening=equivalent           clover_passed=False
+compare                        weakening=incomparable         clover_passed=False
+convert_map_key                weakening=strictly_weaker      clover_passed=False
+copy_part                      weakening=equivalent           clover_passed=False
+count_lessthan                 weakening=equivalent           clover_passed=False
+double_array_elements          weakening=incomparable         clover_passed=False
+double_quadruple               weakening=equivalent           clover_passed=True
+even_list                      weakening=equivalent           clover_passed=False
+find                           weakening=incomparable         clover_passed=False
+has_close_elements             weakening=equivalent           clover_passed=True
+insert                         weakening=equivalent           clover_passed=True
+integer_square_root            weakening=strictly_weaker      clover_passed=False
+is_even                        weakening=strictly_weaker      clover_passed=False
+is_palindrome                  weakening=strictly_weaker      clover_passed=False
+linear_search1                 weakening=equivalent           clover_passed=False
+linear_search2                 weakening=equivalent           clover_passed=True
+linear_search3                 weakening=equivalent           clover_passed=True
+longest_prefix                 weakening=equivalent           clover_passed=True
+match                          weakening=equivalent           clover_passed=True
+max_array                      weakening=equivalent           clover_passed=True
+min_array                      weakening=equivalent           clover_passed=True
+min_of_two                     weakening=equivalent           clover_passed=True
+modify_2d_array                weakening=incomparable         clover_passed=False
+multi_return                   weakening=strictly_weaker      clover_passed=False
+online_max                     weakening=equivalent           clover_passed=False
+only_once                      weakening=incomparable         clover_passed=False
+quotient                       weakening=strictly_weaker      clover_passed=False
+remove_front                   weakening=equivalent           clover_passed=True
+replace                        weakening=incomparable         clover_passed=False
+return_seven                   weakening=strictly_weaker      clover_passed=False
+reverse                        weakening=incomparable         clover_passed=False
+rotate                         weakening=equivalent           clover_passed=False
+selectionsort                  weakening=equivalent           clover_passed=True
+seq_to_array                   weakening=incomparable         clover_passed=False
+set_to_seq                     weakening=incomparable         clover_passed=False
+slope_search                   weakening=equivalent           clover_passed=False
+swap                           weakening=strictly_weaker      clover_passed=False
+swap_arith                     weakening=equivalent           clover_passed=True
+swap_bitvector                 weakening=strictly_weaker      clover_passed=False
+swap_in_array                  weakening=equivalent           clover_passed=True
+swap_sim                       weakening=equivalent           clover_passed=True
+test_array                     weakening=incomparable         clover_passed=False
+triple                         weakening=strictly_weaker      clover_passed=False
+triple2                        weakening=strictly_weaker      clover_passed=False
+triple3                        weakening=strictly_weaker      clover_passed=False
+triple4                        weakening=equivalent           clover_passed=True
+two_sum                        weakening=equivalent           clover_passed=True
+update_array                   weakening=incomparable         clover_passed=True
+update_map                     weakening=incomparable         clover_passed=False
+
+============================================================
+WEAKENING LABEL COUNTS
+  strictly_weaker: 15
+  equivalent: 30
+  incomparable: 17
+
+2x2 CROSS-TABULATION
+                            Clover MISSED  Clover CAUGHT
+Strictly weaker spec                    0             15
+Equivalent / other                     23             24
+
+STATS (n=62)
+  Weakening rate:                  15/62 = 24.2%
+  Weakened → Clover missed:        0/15 = 0.0%
+  Precision (weaker predicts miss): 0/15 = 0.0%
+  Recall (misses explained by weak): 0/23 = 0.0%
